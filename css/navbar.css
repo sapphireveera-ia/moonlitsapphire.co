@@ -1,0 +1,128 @@
+/* =========================
+   🌊 DREAMY FLOATING NAVBAR
+========================= */
+
+.navbar{
+  position:fixed;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:85%;
+  max-width:1200px;
+
+  padding:15px 40px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(15,23,42,0.25);
+  backdrop-filter:blur(15px);
+
+  border-radius:50px;
+  border:1px solid rgba(56,189,248,0.2);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.4),
+    0 0 30px rgba(71, 184, 232, 0.84);
+
+  z-index:1000;
+  transition:0.4s ease;
+}
+
+/* logo */
+
+.logo{
+  font-size:1.1rem;
+  font-weight:600;
+  letter-spacing:1px;
+  color:var(--main-text);
+  white-space:nowrap;
+}
+
+/* menu */
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:35px;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--soft-text);
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--accent-glow);
+}
+
+/* underline animation */
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  bottom:-5px;
+  left:0;
+  background:var(--accent-glow);
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* hamburger */
+
+.hamburger{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* navbar scroll effect */
+
+.navbar.scrolled{
+  background:rgba(11,28,45,0.9);
+  backdrop-filter:blur(10px);
+}
+
+/* =========================
+   📱 MOBILE NAVBAR
+========================= */
+
+@media (max-width:900px){
+
+  .hamburger{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+
+    width:200px;
+    padding:20px;
+
+    flex-direction:column;
+    gap:20px;
+
+    background:#0f2a44;
+    border-radius:12px;
+
+    display:none;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+}

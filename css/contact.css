@@ -1,0 +1,211 @@
+/* =========================
+   💌 CONTACT SECTION
+========================= */
+
+.contact-section {
+  padding: 120px 20px;
+}
+
+/* =========================
+   CONTACT LAYOUT
+========================= */
+
+.contact-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =========================
+   CONTACT CARDS
+========================= */
+
+.contact-info-card,
+.contact-form-card {
+  flex: 1;
+  min-width: 350px;
+
+  padding: 50px;
+  border-radius: 30px;
+
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* left info card */
+
+.contact-info-card {
+  background: rgba(255,255,255,0.05);
+}
+
+/* form card */
+
+.contact-form-card {
+  background: rgba(15,23,42,0.85); /* lebih solid supaya teks jelas */
+}
+
+/* =========================
+   CONTACT TEXT
+========================= */
+
+.contact-desc {
+  margin: 15px 0 40px;
+  opacity: 0.8;
+  color: white;
+}
+
+/* =========================
+   CONTACT ITEMS
+========================= */
+
+.contact-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-item h4 {
+  margin-bottom: 5px;
+}
+
+.contact-item i {
+  font-size: 20px;
+  color: #38bdf8;
+  margin-top: 5px;
+}
+
+/* =========================
+   FORM LAYOUT
+========================= */
+
+.input-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+.contact-form-card input,
+.contact-form-card textarea {
+
+  width: 100%;
+  padding: 14px 16px;
+
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.08);
+
+  color: #ffffff;
+  font-weight: 500;
+
+  outline: none;
+  margin-bottom: 20px;
+
+  transition: 0.3s ease;
+}
+
+/* placeholder */
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder{
+  color: rgba(255,255,255,0.6);
+}
+
+/* focus effect */
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus{
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 10px rgba(56,189,248,0.4);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.contact-form-card button {
+
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(56,189,248,0.35);
+  color: white;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.contact-form-card button:hover {
+  background: rgba(56,189,248,0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(56,189,248,0.4);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+  margin: 25px 0;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.social-icons i {
+  font-size: 22px;
+  color: white;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover i {
+  color: #38bdf8;
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form-card,
+  .contact-info-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+}

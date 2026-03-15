@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificates | Safira</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+
+<body>
+
+<a href="index.html" class="back-home">← Back to Home</a>
+
+<section class="projects-section">
+
+  <h2>My Certificates</h2>
+  <p>Courses, achievements, and learning milestones.</p>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="assets/images/c2.jpeg" onclick="openCert(this.src)">
+      <h3>Green Initiative Conference</h3>
+      <p>Kumparan • 2025</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="assets/images/c1.jpeg" onclick="openCert(this.src)">
+      <h3>Secretary</h3>
+      <p>OSCAR 2.0 • 2025</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="assets/images/c3.jpeg" onclick="openCert(this.src)">
+      <h3>FPCI-GRIPS Virtual Public Forum</h3>
+      <p>FPCI • 2025</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="assets/images/c4.jpeg" onclick="openCert(this.src)">
+      <h3>Regional Forum 2025 - Empowering Regions, From Local to Global</h3>
+      <p>BERITA SATU • 2025</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="assets/images/c5.jpeg" onclick="openCert(this.src)">
+      <h3>Youth Generation Inspire</h3>
+      <p>IPB • 2025</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- POPUP -->
+<div id="certModal" class="cert-modal" onclick="closeCert()">
+  <img id="certImg">
+</div>
+
+<script>
+
+function openCert(src){
+  document.getElementById("certModal").style.display="flex";
+  document.getElementById("certImg").src=src;
+}
+
+function closeCert(){
+  document.getElementById("certModal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

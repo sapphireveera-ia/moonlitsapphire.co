@@ -1,0 +1,359 @@
+/* =========================
+   📦 IMPORT FILES
+========================= */
+
+@import url('navbar.css');
+@import url('hero.css');
+@import url('about.css');
+@import url('projects.css');
+@import url('memories.css');
+@import url('contact.css');
+@import url('chatbot.css');
+@import url('footer.css');
+@import url('animations.css');
+
+
+/* =========================
+   🌊 MIDNIGHT OCEAN THEME
+========================= */
+
+:root {
+  --deep-navy: #0f172a;
+  --midnight-blue: #0b2545;
+  --ocean-blue: #1e3a5f;
+  --soft-text: #94a3b8;
+  --main-text: #e2e8f0;
+  --accent-glow: #38bdf8;
+}
+
+
+/* =========================
+   🔄 RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* =========================
+   🌌 BODY GLOBAL
+========================= */
+
+body {
+  font-family: 'Lora', serif;
+
+  background:
+    radial-gradient(3px 3px at 20% 30%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(3px 3px at 70% 60%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.5), transparent),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #0b1f3a 40%,
+      #1e3a5f 100%
+    );
+
+  color: var(--main-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   📚 SECTION GLOBAL
+========================= */
+
+.section {
+  padding: 140px 10%;
+}
+
+
+/* =========================
+   🖋️ GLOBAL TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--main-text);
+  text-shadow: 0 0 20px rgba(56,189,248,0.15);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-shadow: 0 0 25px rgba(56,189,248,0.2);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+}
+
+p {
+  color: var(--soft-text);
+  max-width: 600px;
+}
+
+
+/* =========================
+   🖼️ IMAGE DEFAULT
+========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================
+   🌫️ AMBIENT GLOW EFFECT
+========================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 70% 60%, white, transparent),
+    radial-gradient(2px 2px at 40% 80%, white, transparent),
+    radial-gradient(2px 2px at 90% 20%, white, transparent);
+
+  opacity:0.5;
+  pointer-events:none;
+  z-index:0;
+}
+body::after {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  bottom: -200px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(30,58,95,0.4), transparent 70%);
+  filter: blur(120px);
+  animation: floatGradient 15s ease-in-out infinite alternate;
+}
+
+@keyframes floatGradient {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -50px); }
+}
+
+
+/* =========================
+   🖱️ SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-glow);
+  border-radius: 10px;
+}
+
+
+/* =========================
+   ✨ SELECTION
+========================= */
+
+::selection {
+  background: var(--accent-glow);
+  color: var(--deep-navy);
+}
+
+
+/* =========================
+   🦶 FOOTER FIX
+========================= */
+
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* =========================
+   🌙 GLOBAL MOON GLOW CARD
+========================= */
+
+.moon-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Soft outer glow */
+.moon-card {
+  box-shadow:
+    0 0 30px rgba(255,255,255,0.04),
+    0 0 60px rgba(56,189,248,0.05);
+}
+
+/* Inner moonlight reflection */
+.moon-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255,255,255,0.12),
+    transparent 60%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Hover effect */
+.moon-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.07),
+    0 0 90px rgba(56,189,248,0.15);
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 120px 7%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    width: 92%;
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .about-container,
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-card {
+    padding: 35px;
+  }
+
+  .about-image img {
+    width: 200px;
+  }
+}
+/* =========================
+   🌙 LOGO MOON GLOW
+========================= */
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--main-text);
+  position: relative;
+  transition: 0.4s ease;
+}
+
+/* Soft outer glow */
+.logo {
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 25px rgba(56,189,248,0.25);
+}
+
+/* Hover effect */
+.logo:hover {
+  text-shadow:
+    0 0 15px rgba(255,255,255,0.4),
+    0 0 35px rgba(56,189,248,0.4);
+  transform: translateY(-2px);
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 8px;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.15),
+    transparent 70%
+  );
+  z-index: -1;
+  opacity: 0.4;
+}
+.form-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  padding: 14px 20px;
+  border-radius: 20px;
+  color: var(--main-text);
+  box-shadow: 0 0 25px rgba(175,203,255,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+.form-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/*back home*/
+.back-home{
+  position: relative;
+  display: inline-block;
+  margin: 30px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  z-index: 100;
+}
